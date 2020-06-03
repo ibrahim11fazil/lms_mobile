@@ -1,0 +1,118 @@
+<mat-card class="example-card">
+    <!-- <mat-card-header class="title-card"> -->
+        <mat-card-title >{{'addRoles'|translate}}</mat-card-title>
+    <!-- </mat-card-header> -->
+    <mat-card-content>
+        <form  #adminForm="ngForm"   (ngSubmit)="addEmployeeRoles()" class="example-form">
+            <!-- <form  [formGroup]="leaveForm"  (ngSubmit)="employeeLeaveRequest()" class="example-form">  -->
+             <table class="example-full-width" cellspacing="0">
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
+                        <!-- <mat-form-field class="example-full-width"> -->
+                             <br>
+                            <!-- <mat-label><h5>My Employee Id : {{user.empId}}  </h5></mat-label> -->
+                            <!-- &nbsp; -->
+                            <!-- <mat-label> <h5>My Username : {{user.empName}} </h5> </mat-label> -->
+                            <!-- <mat-label> Employee Id : {{user.emailId}}  </mat-label>
+                            <mat-label> Employee Id : {{user.mobileNo}}  </mat-label>
+                            <mat-label> Employee Id : {{user.deptName}}  </mat-label> -->
+                        <!-- </mat-form-field>   -->
+                </div>
+
+                <div fxLayout="row wrap"  class="searchPartStyle" >
+                    <!-- <mat-form-field>
+                      <mat-label>Select Role</mat-label>
+                      <select matNativeControl required>
+                        <option [value]="empInfo.empId" *ngFor="let empInfo of empInfoList">{{empInfo.empId}} - {{empInfo.empName}}</option>
+                           
+                      </select>
+                    </mat-form-field> -->
+                   
+                  <mat-form-field class="example-full-width">
+                        <mat-label>{{'enterEmployeeId'|translate}}</mat-label>
+                        <input matInput placeholder="{{'employeeId'|translate}}" name="editempId" [(ngModel)]="empId" >
+                      </mat-form-field> 
+                        &nbsp;&nbsp;&nbsp;  <button   class="search-button" type="button" (click)="searchEmployeeById()" color="primary">{{'searchEmployee'|translate}}</button>
+                  </div>
+
+                  <br> 
+                <div *ngIf="addRoleStatus" fxLayout="row wrap"  class="full-wid mrgn-b-md">  
+                  <mat-form-field class="example-full-width">
+                    <!-- <mat-label>Enter Employee ID</mat-label> -->
+                    <input matInput placeholder="{{'employeeId'|translate}}" name="empId" [(ngModel)]="empInfo.empId" readonly required>
+                  </mat-form-field>
+                <!-- </div> 
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md">   -->
+                  &nbsp;&nbsp;&nbsp;
+                  <mat-form-field class="example-full-width">
+                    <!-- <mat-label> Employee Name</mat-label> -->
+                    <input matInput placeholder="{{'employeeName'|translate}}" name="empName" [(ngModel)]="empInfo.empName"  readonly required>
+                </mat-form-field>  
+                <!-- </div>
+
+
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md"> -->
+                  <!-- &nbsp;&nbsp;&nbsp; -->
+                  <!-- <mat-form-field class="example-full-width"> -->
+                    <!-- <mat-label> Email Id </mat-label> -->
+                    <!-- <input matInput placeholder="Email Id" name="emailId" [(ngModel)]="empInfo.emailId" readonly required>
+                </mat-form-field>   -->
+                <!-- </div>
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md"> -->
+                  &nbsp;&nbsp;&nbsp;
+                  <mat-form-field class="example-full-width">
+                    <!-- <mat-label>Department</mat-label> -->
+                    <input matInput placeholder="{{'departmentName'|translate}}" name="deptName" [(ngModel)]="empInfo.deptName"  readonly required>
+                </mat-form-field>  
+                <!-- </div> -->
+
+                <br><br>
+                  <!-- <div  fxLayout="row wrap"  class="full-wid mrgn-b-md"> -->
+                  <mat-form-field>
+                    <mat-label>Select Role</mat-label>
+                    <select matNativeControl  name="role" [(ngModel)]="empInfo.role" required>
+                      <option value="ADM">{{'admin'|translate}}</option>
+                      <option value="MGR">{{'manager'|translate}}</option>
+                      <option value="EMP">{{'employee'|translate}}</option> 
+                      <option value= "''" >{{'noRole'|translate}}</option> 
+                    </select>
+                  </mat-form-field>
+                <!-- </div>  -->
+             
+
+                  
+    <mat-card-actions class="submitbutton">
+        <!-- [disabled]="reportForm.invalid"  --> 
+        <button mat-raised-button type="submit"    color="primary">{{'submit'|translate}}</button>
+        <label mat-label >{{submitStatusMsg}}</label>
+    </mat-card-actions>
+  </div> 
+ 
+</table> 
+</form>
+<!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+</mat-card-content>
+</mat-card>
+
+
+<!-- 
+<div class="col-md-6">
+    <h2 class="text-center">Add Employee</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input [(ngModel)]="user.designation" placeholder="Designation" name="designation" class="form-control" id="designation">
+        </div>
+
+        <div class="form-group">
+            <label for="empId">Employee Id</label>
+            <input [(ngModel)]="user.empId" placeholder="Employee Id" name="Employee Id" class="form-control" id="employeeid">
+        </div>
+
+        <button class="btn btn-success" (click)="createEmployee()">Create</button>
+    </form>
+</div> -->

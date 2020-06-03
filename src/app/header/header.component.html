@@ -1,0 +1,59 @@
+
+ 
+  <ion-app dir="{{textDir}}"> 
+      <ion-menu slot="start" content-id="main-content" dir="{{textDir}}"> 
+ 
+  
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="'/employeeLeave'"  *ngIf="isEmployee || isManager || isAdmin " routerLinkActive="active-list-item" >
+         {{'leaveRequest'|translate}}
+        </ion-item>
+        <ion-item *ngIf="isAdmin" routerLinkActive="active-list-item" [routerLink]="'/admin'"> 
+          {{'addRoles'|translate}} 
+        </ion-item>
+        <ion-item *ngIf="isManager || isEmployee" routerLinkActive="active-list-item" [routerLink]="'/manage'" >
+       
+          {{'generateReport'|translate}}
+        </ion-item>
+        <ion-item *ngIf="isAdmin" routerLinkActive="active-list-item" [routerLink]="'/register'" >
+       
+          {{'registerEmployee'|translate}} 
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar color="primary" dir="{{textDir}}">
+        
+        <ion-buttons slot="start" dir="{{textDir}}">
+          <ion-menu-button></ion-menu-button> 
+        </ion-buttons>  
+       
+        <ion-title style="text-align:center;" >  {{'leaveManagementSystem' | translate}} </ion-title>
+        <!-- <ion-title slot="end"  >  {{'leaveManagementSystem' | translate}} </ion-title> -->
+        <!-- <ion-title *ngIf="router.url==='/manage'"  >  {{'generateReport'|translate}} </ion-title> -->
+        
+        <a  slot="end"  [routerLink]="" class="prfLabel" type="submit"   *ngIf="textDir==='rtl'" (click)="useLanguage('en')">(English)</a>
+        <a  slot="end"  [routerLink]="" class="prfLabel" type="submit"   *ngIf="textDir==='ltr'" (click)="useLanguage('ar')"> (العربية)</a>
+   
+      
+      </ion-toolbar>
+          
+    </ion-header>
+     <ion-router-outlet  ></ion-router-outlet> 
+  </div>
+  
+</ion-app>
+
+ 
+ 

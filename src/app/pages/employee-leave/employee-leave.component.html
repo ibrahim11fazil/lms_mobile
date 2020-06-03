@@ -1,0 +1,285 @@
+<!-- <ion-view> -->
+  
+    <!-- <ion-scroll scrollX="true" scrollY="true" > -->
+      <ion-content  scroll="true"   > 
+
+        <!-- <ion-card class="centerLogin"> -->
+          <mat-card-title >{{'leaveRequest'|translate}}</mat-card-title> 
+<mat-card class="example-card">
+    <!-- <mat-card-header class="title-card"> -->
+     
+    <!-- </mat-card+-header> -->
+    <mat-card-content>
+        <!-- <form  #reportForm="ngForm"   (ngSubmit)="employeeLeaveRequest(reportForm.value)" class="example-form"> -->
+            <form  #reportForm="ngForm"   (ngSubmit)="employeeLeaveRequestList(reportForm.value)" class="example-form">
+            <!-- <form  [formGroup]="leaveForm"  (ngSubmit)="employeeLeaveRequest()" class="example-form">  -->
+             <table class="example-full-width" cellspacing="0">
+                <!-- <div fxLayout="row wrap"  class="full-wid mrgn-b-md" > -->
+                        <!-- <mat-form-field class="example-full-width"> -->
+                             <!-- <br>    -->
+                            <!-- <mat-label><h5>My Employee Id : {{user.empId}}  </h5></mat-label> -->
+                            <!-- &nbsp; -->
+                            <!-- <mat-label> <h5>User Name : {{user.empName}} </h5> </mat-label> -->
+                            <!-- <mat-label> Employee Id : {{user.emailId}}  </mat-label>
+                            <mat-label> Employee Id : {{user.mobileNo}}  </mat-label>
+                            <mat-label> Employee Id : {{user.deptName}}  </mat-label> -->
+                        <!-- </mat-form-field> -->
+                <!-- </div> -->
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="isManager">
+                    <!-- (dateChange)="dateValidator($event)" -->
+                    <br>    
+                    <mat-form-field class="example-full-width" >
+                      <mat-label>{{'employeeId'|translate}}</mat-label>
+                      <input matInput placeholder="{{'employeeId'|translate}}" name="empId"
+                        [matAutocomplete]="auto" (ngModelChange)='searchEmployeeById($event)' [(ngModel)]="leaveInfo.empId">
+                      <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option   [value]="empInfo.empId">
+                          <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                          {{empInfo.empId}} 
+                           {{empInfo.empName}} 
+                        </mat-option>
+                      </mat-autocomplete>
+                      <!-- <mat-error>please enter Employee Id</mat-error> -->
+                    </mat-form-field> 
+                      <!-- &nbsp;&nbsp;&nbsp; -->
+                        <!-- <button   class="search-button" type="button" (click)="searchEmployeeById()" color="primary">Search Employee</button> -->
+                        <!-- &nbsp;&nbsp;&nbsp; -->
+                      </div>
+                      <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
+                    <mat-form-field> 
+                        <mat-label>{{'fromDate'|translate}}</mat-label>
+                        <input   matInput   [matDatepicker]="picker1" placeholder="{{'fromDate'|translate}}"  name="fromDate" (dateInput)="dateValidator($event)"    [(ngModel)]="leaveInfo.fromDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker> 
+                    </mat-form-field>
+                     
+
+                        <!-- &nbsp;&nbsp;&nbsp;  -->
+                      </div>
+                      <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
+                    <mat-form-field> 
+                        <mat-label>{{'toDate'|translate}}</mat-label>
+                        <!-- [matDatepickerFilter]="myFilter" -->
+                        <input   matInput     [matDatepicker]="picker2" placeholder="{{'toDate'|translate}}"    name="toDate" (dateInput)="dateValidator($event)"   [(ngModel)]="leaveInfo.toDate" required>
+                        <!-- <input      [matDatepicker]="picker2" placeholder="To Date"    name="endDate" (dateChange)="dateValidator($event)" formControlName="toDateControl"  > -->
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                   
+                      <!-- &nbsp;&nbsp;&nbsp; -->
+                    </div>
+                    <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
+                     <mat-form-field> 
+                        <mat-label>{{'typeOfLeave'|translate}}</mat-label>
+                        <select matNativeControl name="leaveType"  [(ngModel)]="leaveInfo.leaveType" required >
+                        <!-- formControlName="selectFormControl"> -->
+                          <!-- <option  label="">--Leave --</option> -->
+                          <!-- <option value="Annual">{{'annualLeave'|translate}}</option>
+                          <option value="Overtime">{{'overtimeLeave'|translate}}</option>
+                          <option value="Course">{{'courseLeave'|translate}}</option>
+                          <option value="Motherhood">{{'motherHoodLeave'|translate}}</option>
+                          <option value="Sick">{{'sickLeave'|translate}}</option> -->
+                          <option value="إجازة دوريه">{{'annualLeave'|translate}}</option>
+                          <option value="إجازة العمل الإضافي">{{'overtimeLeave'|translate}}</option>
+                          <option value="الدورات">{{'courseLeave'|translate}}</option>
+                          <option value="إجازة أمومة">{{'motherHoodLeave'|translate}}</option>
+                          <option value="إجازة مرافق مريض">{{'sickLeave'|translate}}</option>
+                        </select>
+                        <!-- <mat-error   
+                        *ngIf= "leaveTypeValidation"> 
+                          This field is required
+                       </mat-error> -->
+                        <!-- <em *ngIf="!validateControl()">Leave Type is required</em> -->
+                        <!-- <mat-error> -->
+                         <!-- *ngIf="selectFormControl.hasError('required')"> --> 
+                          <!-- This field is required
+                        </mat-error> -->
+                        <!-- <div class="col-md-5">
+                            <em *ngIf="leaveForm.get('selectFormControl').invalid && leaveForm.get('selectFormControl').touched">Leave Type is required</em>
+                         </div> -->
+                        <!-- <mat-hint>You can pick up your favorite car here</mat-hint> -->
+                        </mat-form-field> 
+                  </div> 
+
+                  
+    <mat-card-actions class="submitbutton">
+        <!-- [disabled]="reportForm.invalid"  -->
+        <button mat-raised-button type="submit"    color="primary">{{'submitLeave'|translate}}</button>
+        <div [innerHtml]='submitMsg'></div> 
+    </mat-card-actions>
+
+
+    <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="!isManager">
+        <!-- <mat-label>File Upload</mat-label> -->
+        <!-- <div> -->
+            <h4><b> {{'fileUpload'|translate}} :</b> </h4> 
+               <label mat-raised-button type="button"  class="labelstyle" for="input-file-id"    (change)="selectFile($event)">{{'chooseFile'|translate}}</label>
+                <br>
+                <div> <label>{{selectedFileName}}</label>
+                <!-- <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles" (click)="upload()" type="button">Upload</button> -->
+                <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles" (click)="upload('emp')" type="button">{{'upload'|translate}}</button>
+                <!-- [disabled] -->
+                <!-- <div> {{msg}}</div>  -->
+                </div> <br><br>
+                <label>{{msg}}</label>
+                <!-- <div [innerHtml]='msg'></div> -->
+            
+
+                <mat-label>
+                    <input type="file" hidden  accept=".xlsx,.xls"  id="input-file-id" (change)="selectFile($event)">
+                    </mat-label>
+                      <mat-spinner  strokeWidth="4" [diameter]="35" *ngIf="matSpinnerStatus "></mat-spinner>
+             
+        <!-- </div> -->
+            
+    </div>
+
+    <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="isManager">
+       <h4><b> {{'fileUpload'|translate}} :</b> </h4> 
+             <label mat-raised-button type="button"   class="labelstyle" for="input-file-id"    (change)="selectFile($event)">{{'chooseFile'|translate}}</label>
+              <br><br>
+              <div> <label>{{selectedFileName}}</label>
+              <!-- &nbsp;&nbsp;&nbsp; -->
+              <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles" id="amendUpload" (click)="upload('amendUpload')" type="button">{{'amendUpload'|translate}}</button> 
+               <!-- &nbsp;&nbsp;&nbsp;  -->
+               <!-- <b *ngIf="selectedFiles">OR</b> -->
+              <!-- &nbsp;&nbsp;&nbsp;  -->
+              <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles"  id="newUpload"  (click)="upload('newUpload')" type="button">{{'newUpload'|translate}}</button>
+          </div> 
+              <label>{{msg}}</label> 
+              <mat-label>
+                  <input type="file" hidden  accept=".xlsx,.xls"  id="input-file-id" (change)="selectFile($event)">
+                  </mat-label>
+                    <mat-spinner  strokeWidth="4" [diameter]="35" *ngIf="matSpinnerStatus "></mat-spinner>
+            
+          
+           </div>
+</table> 
+</form>
+<!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+</mat-card-content>
+
+
+
+<div  [hidden]="!isSearchData"> 
+    <mat-form-field>
+      <mat-label>{{'filter'|translate}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Any Column">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+     
+       
+      
+      <!-- <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Emp ID</th>
+        <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
+      </ng-container> -->
+      
+      
+     
+       <ng-container matColumnDef="EmpID">
+        <th mat-header-cell *matHeaderCellDef> {{'employeeId'|translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.empId}} </td>
+      </ng-container>
+  
+      
+      <!-- <ng-container matColumnDef="EmpName">
+        <th mat-header-cell *matHeaderCellDef> Emp Name</th>
+        <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+      </ng-container> -->
+  
+      <!-- <ng-container matColumnDef="Deptname">
+        <th mat-header-cell *matHeaderCellDef> Dept Name</th>
+        <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
+      </ng-container> -->
+  
+  
+      <ng-container matColumnDef="FromDate">
+        <th mat-header-cell *matHeaderCellDef> {{'fromDate'|translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.fromDate  }} </td>
+      </ng-container>  
+      
+      <ng-container matColumnDef="ToDate">
+        <th mat-header-cell *matHeaderCellDef> {{'toDate'|translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.toDate }} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="LeaveType">
+        <th mat-header-cell *matHeaderCellDef> {{'typeOfLeave'|translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.leaveType}} </td>
+       
+          <!-- <td mat-cell *matCellDef="let element">  <label  [hidden]="element.leaveType=='الدورات'">{{'annualLeave'|translate}}</label>  </td> -->
+          
+      </ng-container> 
+
+      <!-- <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="accent" (click)="redirectToUpdate(element)">
+              <mat-icon class="mat-18">system_update</mat-icon>
+          </button>
+        </td>
+      </ng-container> -->
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> {{'action'|translate}} </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="warn" (click)="redirectToDelete(element)">
+                <mat-icon class="mat-18">delete</mat-icon>
+            </button>
+        </td>
+      </ng-container> 
+  
+       
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"> 
+          <!-- (click)="selection.toggle(row)"> -->
+      </tr>
+     
+    </table>  
+    <!-- *ngIf="dataSource.data.length > 0" --> 
+    <div class="container" >
+      <!-- <label  class="arrowButtons"> {{language.label_items_per_page}} </label>   -->
+      <mat-paginator [length]="100" [pageSize]="5"  #page  [pageSizeOptions]="[1 ,3, 5, 10, 25, 50, 100]"
+      (page)="pageEvent = $event">
+         <!-- (page)="pageEvent = search($event)">    -->
+         <!-- (page)="pageEvent = $event">   -->  
+      </mat-paginator>   
+      <!-- <label  class="arrowButtons">{{language.label_page}} {{pageIndexCustom+1}} </label>  -->
+      <!-- <button  mat-button class="arrowButtons" id="prev"   #prev1     ><</button>
+      <button  mat-button class="arrowButtons" id="next"   #next1    >></button> -->
+     
+    </div> 
+  </div> 
+
+
+</mat-card>
+
+
+<!-- 
+<div class="col-md-6">
+    <h2 class="text-center">Add Employee</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input [(ngModel)]="user.designation" placeholder="Designation" name="designation" class="form-control" id="designation">
+        </div>
+
+        <div class="form-group">
+            <label for="empId">Employee Id</label>
+            <input [(ngModel)]="user.empId" placeholder="Employee Id" name="Employee Id" class="form-control" id="employeeid">
+        </div>
+
+        <button class="btn btn-success" (click)="createEmployee()">Create</button>
+    </form>
+</div> -->
+<!-- </ion-card>  -->
+</ion-content>
+<!-- </ion-scroll>
+</ion-view> -->

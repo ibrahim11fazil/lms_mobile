@@ -1,0 +1,123 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ltr {   @import 'themes/en.scss'; }  .rtl {     @import 'themes/ar.scss'; }
+nav a.active {
+    background-color: brown;
+  }
+  ion-menu{
+    --width: 15rem;
+  }
+  .active-list-item {
+    // color: white !important; /* Note: You could also use a custom theme */
+    // text-decoration-color: red;
+    // background-color: #673ab7;
+  }
+   
+  .logoutbtn{
+    margin-left: 500px;
+}
+
+.navstyle{
+  text-align: center;
+}
+
+   .mat-drawer-inner-container {
+  width: 190px  !important;
+ } 
+
+
+ .logalign{
+   align-content: center;
+   text-align: center;
+   position: absolute;
+   bottom: 0;
+  // margin-top: 200% ;
+  // vertical-align: bottom;
+   left: 0;
+  //  overflow: hidden;
+  
+    
+ }
+ .loginButton{ 
+    // background-color: red;
+    position: relative;
+    color: white; 
+    background-color: #673ab7;;
+    justify-content: center;
+    padding-left: 65px;
+    padding-right:65px;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    font-size: 15px; 
+  
+    
+ }
+
+ .my-class{
+  width: 200px!important;
+  min-width: unset!important;
+  text-align: left; 
+}
+
+.loginbtnStyle{
+  width: 200px!important;
+  min-width: unset!important;
+  text-align: left;
+  color: white; 
+    background-color: #673ab7;;
+}
+
+.sideNavStyle{
+  background-color: lightgray;
+}
+.prfLabel{
+  
+  // margin-left: auto;
+  // margin-right: auto;
+  // display:flex;
+  // // justify-content: flex-end;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: unset;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+ion-title{
+    font-size: unset; 
+}
+
+ 
+ 

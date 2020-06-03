@@ -1,0 +1,104 @@
+.example-card{ 
+    align-content: center;
+    text-align: center;
+    // margin-left: 33%;
+    margin-top: 5%;
+
+}
+.title-card{
+    text-align: center;
+}
+mat-card{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+}
+mat-card-title{
+    // text-align: center;
+    // align-content:center;
+    // vertical-align: middle;
+    // align-items: center;
+    // ruby-align: center;
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+
+
+// mat-card-header{
+//     // background-color: #673ab7;
+//     // align-content: flex-start;
+// }
+// .example-form{
+//     padding-top: 50px;;
+// }
+.labelstyle{
+    color: white;
+    margin:20px;
+    margin-left:0px;
+    background-color: #673ab7;
+    padding:10px; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.uploadStyle{
+    color: white;
+    margin:20px; 
+    // padding:10px;
+}
+// mat-card-title{
+//     // justify-content: center;
+//     // padding-top: 30px;
+//     // padding-left: 200px;
+//     // padding-bottom: 50px;
+//     // padding-bottom: 20px;
+//     // color: white;
+//     // vertical-align: middle;
+// }
+.submitbutton{ 
+    // text-align: center;
+    // margin-top: 20px;
+    padding:8px; 
+    // margin-left: 10px;
+    font-size: smaller;
+}
+    :host {
+        display: flex;
+        width: 100%;
+        // margin-left: 80%;
+        // justify-content: center;
+        margin-left: 30%;
+        margin-right: 30%;
+        // margin: 100px 0px;
+          
+    }
+    
+//     .mat-form-field {
+//         // width: 100%;
+//         min-width: 20px;
+//     }
+//     .title-card{
+//         text-align: center;
+//     }
+//     mat-card-title,
+//     mat-card-content {
+//         display: flex;
+//         // justify-content: center;
+//     }
+    
+//     // .error {
+//     //     padding: 16px;
+//     //     width: 300px;
+//     //     color: white;
+//     //     background-color: red;
+//     // }
+    
+//     .button {
+//         display: flex;
+//         justify-content: flex-end;
+//     }
+ 

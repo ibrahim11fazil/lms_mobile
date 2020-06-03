@@ -1,0 +1,7 @@
+{
+  "name": "lms-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

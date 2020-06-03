@@ -1,0 +1,132 @@
+<mat-card class="example-card">
+    <mat-card-header >
+        <mat-card-title class="title-card" >{{'register'|translate}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form  #registerForm="ngForm"   (ngSubmit)="registerEmployee(registerForm.value)" class="example-form">
+            <!-- <form  [formGroup]="leaveForm"  (ngSubmit)="employeeLeaveRequest()" class="example-form">  -->
+             <table class="example-full-width" cellspacing="0">
+                 
+
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
+                    
+                   
+                  <mat-form-field class="example-full-width">
+                        <mat-label>{{'employeeId'|translate}}</mat-label>
+                        <input matInput placeholder="Employee Id" name="empId" [(ngModel)]="empInfo.empId" required>
+                        <mat-error>please enter Employee Id</mat-error>
+                      </mat-form-field> 
+                        <!-- &nbsp;&nbsp;&nbsp; -->
+                          <!-- <button   class="search-button" type="button" (click)="searchEmployeeById()" color="primary">Search Employee</button> -->
+                  </div> 
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md">
+                  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                  <mat-form-field class="example-full-width">
+                    <mat-label>{{'employeeName'|translate}}</mat-label>
+                    <input matInput placeholder="{{'employeeName'|translate}}" name="empName" [(ngModel)]="empInfo.empName"    required>
+                    <mat-error>please enter Employee Id</mat-error>
+                </mat-form-field>  
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+              </div> 
+              <div fxLayout="row wrap"  class="full-wid mrgn-b-md">
+                <mat-form-field class="example-full-width">
+                  <mat-label> {{'emailId'|translate}}</mat-label>
+                  <input matInput placeholder="{{'emailId'|translate}}" type="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="emailId" [(ngModel)]="empInfo.emailId"    >
+                  <mat-error>please enter valid email id</mat-error>
+              </mat-form-field> 
+                </div>
+
+
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md">
+                   
+                <!-- <mat-form-field class="example-full-width">
+                  <mat-label> Mobile No </mat-label>
+                  <input matInput placeholder="Mobile No" type="number" min="8" name="mobileNo" [(ngModel)]="empInfo.mobileNo"   required>
+                  <mat-error>please enter Mobile No</mat-error>
+              </mat-form-field>   -->
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <!-- </div>
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md"> -->
+              
+                <mat-form-field> 
+                  <mat-label>{{'departmentName'|translate}}</mat-label>
+                  <select matNativeControl name="Department"  [(ngModel)]="empInfo.deptName" required >
+                  <!-- formControlName="selectFormControl"> -->
+                    <!-- <option  label="">--Leave --</option> -->
+                    <option value= "البرمجيات" >             
+                        {{'software'|translate}}
+                    </option>
+                    <option value="الدعم الفني">
+                      {{'technicalSupport'|translate}}
+                    </option>
+                    <option value="الشبكات">
+                      {{'networks'|translate}}
+                    </option>
+                    <option value="المكتب الإداري">
+                      {{'administrativeOffice'|translate}}
+                    </option>
+                  </select>
+                  <mat-error>please select department</mat-error>
+                  </mat-form-field> 
+                  
+                  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+
+
+
+                <!-- <div fxLayout="row wrap"  class="full-wid mrgn-b-md">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Password</mat-label>
+                      <input matInput placeholder="Password" name="password" type="password" [(ngModel)]="empInfo.password"    required>
+                      <mat-error>please enter password</mat-error>
+                  </mat-form-field> -->
+                  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   -->
+                <!-- </div>
+                <div fxLayout="row wrap"  class="full-wid mrgn-b-md">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Confirm Password</mat-label>
+                      <input matInput placeholder="Password" name="password" type="password" [(ngModel)]="confirmpwd"    required>
+                      <mat-error>please confirm password</mat-error>
+                  </mat-form-field>  
+                </div> -->
+                   
+             
+
+                  
+    <mat-card-actions class="submitbutton">
+        <!-- [disabled]="reportForm.invalid"  --> 
+        <button mat-raised-button type="submit"    color="primary">{{'submit'|translate}}</button>
+       <!-- <br><br>   -->
+        <!-- <button mat-raised-button type="button" (click)="goToLoginPage()"    color="primary">Back to Login</button> -->
+    </mat-card-actions>
+
+ 
+</table> 
+</form>
+<!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+</mat-card-content>
+</mat-card>
+
+
+<!-- 
+<div class="col-md-6">
+    <h2 class="text-center">Add Employee</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input [(ngModel)]="user.designation" placeholder="Designation" name="designation" class="form-control" id="designation">
+        </div>
+
+        <div class="form-group">
+            <label for="empId">Employee Id</label>
+            <input [(ngModel)]="user.empId" placeholder="Employee Id" name="Employee Id" class="form-control" id="employeeid">
+        </div>
+
+        <button class="btn btn-success" (click)="createEmployee()">Create</button>
+    </form>
+</div> -->
