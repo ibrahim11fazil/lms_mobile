@@ -3,6 +3,7 @@
         "currentTheme":"ltr",
 
         "leaveManagementSystem": "Leave Management System",
+        "menu": "Menu",
         "leaveRequest" : "Leave Request",
         "addRoles" : "Add Roles",
         "registerEmployee": "Register Employee",

@@ -39,10 +39,10 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    console.log(" LOGIN AUHENTIVATE")
+    console.log(" LOGIN AUHENTIVATE");
     
     if(this.loginForm.valid){
-      
+      console.log(" LOGIN AUHENTIVATE2");
     (this.loginservice.authenticate(this.username, this.password).subscribe(
     
       data => {

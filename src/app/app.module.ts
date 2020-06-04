@@ -53,7 +53,8 @@ import { HeaderComponent } from './header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
+import {MatExpansionModule} from '@angular/material/expansion'; 
+// import { Platform } from '@ionic/angular';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -97,6 +98,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatProgressSpinnerModule,
     MatSelectModule,
     MatAutocompleteModule,
+    MatExpansionModule,
+    // Platform,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

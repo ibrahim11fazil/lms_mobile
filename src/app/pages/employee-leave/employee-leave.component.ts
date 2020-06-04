@@ -15,6 +15,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PageEvent, MatPaginator } from '@angular/material/paginator';
 import { EmployeeLeaveInfoTable } from 'src/app/model/employee-leave-info-table';
 import { TranslateService, LangChangeEvent, TranslationChangeEvent } from '@ngx-translate/core';
+import { MatAccordion } from '@angular/material/expansion';
 // import { LanguageUtil } from '../../../app/app.language';
 @Component({
   selector: 'app-employee-leave',
@@ -24,6 +25,7 @@ import { TranslateService, LangChangeEvent, TranslationChangeEvent } from '@ngx-
 export class EmployeeLeaveComponent implements OnInit {
   @ViewChild('reportForm') 
   public reportForm: NgForm; 
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   // public leaveForm: FormGroup;
   user: EmployeeInfo ;
   leaveInfo:EmployeeLeaveInfo;

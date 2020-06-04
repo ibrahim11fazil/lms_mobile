@@ -4,7 +4,7 @@ import { AuthenticationService } from '../service/authentication.service';
 import {TranslateService, LangChangeEvent, TranslationChangeEvent} from '@ngx-translate/core';
 // import { AuthService } from './../auth/auth.service';
 import { MenuController } from '@ionic/angular';
-
+// import { Platform } from '@ionic/angular';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -31,12 +31,15 @@ export class HeaderComponent implements OnInit{
   empName:string;
   emailId:string;
   textDir: string ;
+  // platform:Platform;
   // currLang: string;
   // = 'rtl';
   constructor(
+    // public platforms: Platform,
     private authenticationService: AuthenticationService,
     private router: Router,private translate: TranslateService,private menu: MenuController) 
     { 
+      // this.platform=platforms;
       console.log("HEADER INVOCkED");
       this.translate.addLangs(['en','ar']);  
       this.translate.use('ar'); 

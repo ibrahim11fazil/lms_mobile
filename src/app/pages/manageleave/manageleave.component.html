@@ -43,22 +43,6 @@
     <!-- </div> -->
   </mat-card-actions>
  
-
-  <!-- <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
-    <h4><b> File Upload :</b> </h4> 
-           <label mat-raised-button type="button"   class="labelstyle" for="input-file-id"    (change)="selectFile($event)">Choose Files</label>
-            <br><br>
-            <div> <label>{{selectedFileName}}</label>
-             &nbsp;&nbsp;&nbsp;
-            <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles" id="amendUpload" (click)="upload('amendUpload')" type="button">Amend Upload</button>  &nbsp;&nbsp;&nbsp; <b *ngIf="selectedFiles">OR</b>
-            &nbsp;&nbsp;&nbsp; <button mat-raised-button color="primary" class="uploadStyle" *ngIf="selectedFiles"  id="newUpload"  (click)="upload('newUpload')" type="button">New Upload</button>
-            </div> 
-            <label>{{msg1}}</label> 
-            <mat-label>
-                <input type="file" hidden  accept=".xlsx,.xls"  id="input-file-id" (change)="selectFile($event)">
-                </mat-label>
-                  <mat-spinner  strokeWidth="4" [diameter]="35" *ngIf="matSpinnerUploadStatus "></mat-spinner>
-   </div> -->
               
 
 </table> 
@@ -87,7 +71,7 @@
     
     
    
-     <ng-container matColumnDef="EmpID"   sticky>
+     <ng-container matColumnDef="EmpID"    >
       <th mat-header-cell *matHeaderCellDef>{{'employeeId'|translate}}</th>
       <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
     </ng-container>
@@ -116,7 +100,7 @@
       <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
     </ng-container>
     
-    <ng-container matColumnDef="LeaveType"  stickyEnd>
+    <ng-container matColumnDef="LeaveType"   >
       <th mat-header-cell *matHeaderCellDef> {{'typeOfLeave'|translate}}</th>
       <td mat-cell *matCellDef="let element"> {{element[6]}} </td>
     </ng-container> 

@@ -1,19 +1,63 @@
+
+mat-card-title{
+    // padding: 4rem;
+    width: 100%;
+    text-align: center; 
+    position: -webkit-sticky; /* Safari */
+  position: sticky;
+  background-color: #673ab7;
+  border-color: #673ab7;
+  color: white;
+  padding-top: 4rem;
+ padding-bottom: 1rem;
+  margin: unset;
+  top: 0;
+}
+ion-button{
+    width:  100%;
+}
+.example-full-width{
+    width:100% !important;
+  }
+.full-wid {
+    text-align: center;
+    
+}
+
+// .centerLogin {
+//     // width: 500px;
+//     vertical-align: middle;
+//     margin: auto
+//   }
+
+table {
+    width: 100%;
+    height: 100%;
+  }
+  td{
+    //   font-size: 1.5vmax
+    font-size: x-small
+  }
+  th{
+    // font-size: 1.5vmax
+    font-size: x-small
+}
 .example-card{ 
     align-content: center;
     text-align: center;
     // margin-left: 33%;
-    margin-top: 5%;
+    // margin-top: 5%;
 
 }
 .title-card{
     text-align: center;
 }
 mat-card{
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    padding-bottom: 20px;
+    // padding-top: 30px;
+    // padding-left: 50px;
+    // padding-right: 50px;
+    // padding-bottom: 50px;
+    // padding-bottom: 20px;
 }
 mat-card-title{
     // text-align: center;
@@ -21,9 +65,9 @@ mat-card-title{
     // vertical-align: middle;
     // align-items: center;
     // ruby-align: center;
-    position: relative;
-    margin-left: 50%;
-    margin-right: 50%;
+    // position: relative;
+    // margin-left: 50%;
+    // margin-right: 50%;
 }
 
 
@@ -67,12 +111,12 @@ mat-card-title{
     font-size: smaller;
 }
     :host {
-        display: flex;
-        width: 100%;
-        // margin-left: 80%;
-        // justify-content: center;
-        margin-left: 30%;
-        margin-right: 30%;
+        // display: flex;
+        // width: 100%;
+        // // margin-left: 80%;
+        // // justify-content: center;
+        // margin-left: 30%;
+        // margin-right: 30%;
         // margin: 100px 0px;
           
     }

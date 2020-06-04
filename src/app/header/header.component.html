@@ -1,12 +1,13 @@
 
  
   <ion-app dir="{{textDir}}"> 
-      <ion-menu slot="start" content-id="main-content" dir="{{textDir}}"> 
- 
+      <ion-menu slot="start"  content-id="main-content"   > 
+        <!-- <ion-menu *ngIf="this.platform.dir()==='rtl'" 
+        side="right" content-id="main-content"  >  -->
   
-    <ion-header>
+    <ion-header >
       <ion-toolbar translucent>
-        <ion-title>Menu</ion-title>
+        <ion-title>{{'menu'|translate}}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -25,6 +26,10 @@
         <ion-item *ngIf="isAdmin" routerLinkActive="active-list-item" [routerLink]="'/register'" >
        
           {{'registerEmployee'|translate}} 
+        </ion-item>
+        <ion-item  routerLinkActive="active-list-item" (click)="onLogout()" >
+       
+          {{'logout'|translate}} 
         </ion-item>
       </ion-menu-toggle>
       </ion-list>

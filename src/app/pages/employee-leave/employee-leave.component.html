@@ -2,32 +2,25 @@
   
     <!-- <ion-scroll scrollX="true" scrollY="true" > -->
       <ion-content  scroll="true"   > 
-
-        <!-- <ion-card class="centerLogin"> -->
-          <mat-card-title >{{'leaveRequest'|translate}}</mat-card-title> 
+ <mat-card-title >{{'leaveRequest'|translate}}</mat-card-title> 
 <mat-card class="example-card">
-    <!-- <mat-card-header class="title-card"> -->
-     
-    <!-- </mat-card+-header> -->
     <mat-card-content>
-        <!-- <form  #reportForm="ngForm"   (ngSubmit)="employeeLeaveRequest(reportForm.value)" class="example-form"> -->
-            <form  #reportForm="ngForm"   (ngSubmit)="employeeLeaveRequestList(reportForm.value)" class="example-form">
-            <!-- <form  [formGroup]="leaveForm"  (ngSubmit)="employeeLeaveRequest()" class="example-form">  -->
+             <form  #reportForm="ngForm"   (ngSubmit)="employeeLeaveRequestList(reportForm.value)" class="example-form">
              <table class="example-full-width" cellspacing="0">
-                <!-- <div fxLayout="row wrap"  class="full-wid mrgn-b-md" > -->
-                        <!-- <mat-form-field class="example-full-width"> -->
-                             <!-- <br>    -->
-                            <!-- <mat-label><h5>My Employee Id : {{user.empId}}  </h5></mat-label> -->
-                            <!-- &nbsp; -->
-                            <!-- <mat-label> <h5>User Name : {{user.empName}} </h5> </mat-label> -->
-                            <!-- <mat-label> Employee Id : {{user.emailId}}  </mat-label>
-                            <mat-label> Employee Id : {{user.mobileNo}}  </mat-label>
-                            <mat-label> Employee Id : {{user.deptName}}  </mat-label> -->
-                        <!-- </mat-form-field> -->
-                <!-- </div> -->
-                <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="isManager">
-                    <!-- (dateChange)="dateValidator($event)" -->
-                    <br>    
+
+              <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{'leaveRequest'|translate}}
+                    </mat-panel-title>
+                    <!-- <mat-panel-description>
+                      Type your name and age
+                      <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description> -->
+                  </mat-expansion-panel-header>
+         <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="isManager">
+                    <!-- <br>     -->
                     <mat-form-field class="example-full-width" >
                       <mat-label>{{'employeeId'|translate}}</mat-label>
                       <input matInput placeholder="{{'employeeId'|translate}}" name="empId"
@@ -39,14 +32,10 @@
                            {{empInfo.empName}} 
                         </mat-option>
                       </mat-autocomplete>
-                      <!-- <mat-error>please enter Employee Id</mat-error> -->
                     </mat-form-field> 
-                      <!-- &nbsp;&nbsp;&nbsp; -->
-                        <!-- <button   class="search-button" type="button" (click)="searchEmployeeById()" color="primary">Search Employee</button> -->
-                        <!-- &nbsp;&nbsp;&nbsp; -->
                       </div>
                       <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
-                    <mat-form-field> 
+                    <mat-form-field  class="example-full-width"> 
                         <mat-label>{{'fromDate'|translate}}</mat-label>
                         <input   matInput   [matDatepicker]="picker1" placeholder="{{'fromDate'|translate}}"  name="fromDate" (dateInput)="dateValidator($event)"    [(ngModel)]="leaveInfo.fromDate" required>
                         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -57,7 +46,7 @@
                         <!-- &nbsp;&nbsp;&nbsp;  -->
                       </div>
                       <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
-                    <mat-form-field> 
+                    <mat-form-field  class="example-full-width"> 
                         <mat-label>{{'toDate'|translate}}</mat-label>
                         <!-- [matDatepickerFilter]="myFilter" -->
                         <input   matInput     [matDatepicker]="picker2" placeholder="{{'toDate'|translate}}"    name="toDate" (dateInput)="dateValidator($event)"   [(ngModel)]="leaveInfo.toDate" required>
@@ -69,50 +58,40 @@
                       <!-- &nbsp;&nbsp;&nbsp; -->
                     </div>
                     <div fxLayout="row wrap"  class="full-wid mrgn-b-md" >
-                     <mat-form-field> 
+                     <mat-form-field  class="example-full-width"> 
                         <mat-label>{{'typeOfLeave'|translate}}</mat-label>
                         <select matNativeControl name="leaveType"  [(ngModel)]="leaveInfo.leaveType" required >
-                        <!-- formControlName="selectFormControl"> -->
-                          <!-- <option  label="">--Leave --</option> -->
-                          <!-- <option value="Annual">{{'annualLeave'|translate}}</option>
-                          <option value="Overtime">{{'overtimeLeave'|translate}}</option>
-                          <option value="Course">{{'courseLeave'|translate}}</option>
-                          <option value="Motherhood">{{'motherHoodLeave'|translate}}</option>
-                          <option value="Sick">{{'sickLeave'|translate}}</option> -->
                           <option value="إجازة دوريه">{{'annualLeave'|translate}}</option>
                           <option value="إجازة العمل الإضافي">{{'overtimeLeave'|translate}}</option>
                           <option value="الدورات">{{'courseLeave'|translate}}</option>
                           <option value="إجازة أمومة">{{'motherHoodLeave'|translate}}</option>
                           <option value="إجازة مرافق مريض">{{'sickLeave'|translate}}</option>
                         </select>
-                        <!-- <mat-error   
-                        *ngIf= "leaveTypeValidation"> 
-                          This field is required
-                       </mat-error> -->
-                        <!-- <em *ngIf="!validateControl()">Leave Type is required</em> -->
-                        <!-- <mat-error> -->
-                         <!-- *ngIf="selectFormControl.hasError('required')"> --> 
-                          <!-- This field is required
-                        </mat-error> -->
-                        <!-- <div class="col-md-5">
-                            <em *ngIf="leaveForm.get('selectFormControl').invalid && leaveForm.get('selectFormControl').touched">Leave Type is required</em>
-                         </div> -->
-                        <!-- <mat-hint>You can pick up your favorite car here</mat-hint> -->
-                        </mat-form-field> 
+                       </mat-form-field> 
                   </div> 
 
                   
     <mat-card-actions class="submitbutton">
         <!-- [disabled]="reportForm.invalid"  -->
-        <button mat-raised-button type="submit"    color="primary">{{'submitLeave'|translate}}</button>
+        <ion-button mat-raised-button type="submit"    color="primary">{{'submitLeave'|translate}}</ion-button>
         <div [innerHtml]='submitMsg'></div> 
     </mat-card-actions>
-
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{'fileUpload'|translate}}
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Type your name and age
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
 
     <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="!isManager">
         <!-- <mat-label>File Upload</mat-label> -->
         <!-- <div> -->
-            <h4><b> {{'fileUpload'|translate}} :</b> </h4> 
+            <!-- <h4><b> {{'fileUpload'|translate}} :</b> </h4>  -->
                <label mat-raised-button type="button"  class="labelstyle" for="input-file-id"    (change)="selectFile($event)">{{'chooseFile'|translate}}</label>
                 <br>
                 <div> <label>{{selectedFileName}}</label>
@@ -135,7 +114,7 @@
     </div>
 
     <div fxLayout="row wrap"  class="full-wid mrgn-b-md" *ngIf="isManager">
-       <h4><b> {{'fileUpload'|translate}} :</b> </h4> 
+       <!-- <h4 style="text-align: start;">  {{'fileUpload'|translate}} :  </h4>  -->
              <label mat-raised-button type="button"   class="labelstyle" for="input-file-id"    (change)="selectFile($event)">{{'chooseFile'|translate}}</label>
               <br><br>
               <div> <label>{{selectedFileName}}</label>
@@ -154,6 +133,8 @@
             
           
            </div>
+  </mat-expansion-panel>
+              </mat-accordion>
 </table> 
 </form>
 <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->

@@ -3,6 +3,7 @@
         "currentTheme":"rtl",
 
         "leaveManagementSystem": "نظام إدارة الإجازات",
+        "menu": "قائمة طعام",
         "leaveRequest" : "طلب إجازة" ,
         "addRoles" : "إضافة أدوار",
         "registerEmployee": "تسجيل الموظف",

@@ -26,9 +26,9 @@ const routes: Routes = [
     component: HomeLayoutComponent,
     canActivate: [AuthGaurdService],
     children: [
-      // {
-      //   path: '',component: HomeComponent
-      // }
+      {
+        path: '',component: EmployeeLeaveComponent
+      },
       { path: 'employeeLeave', component: EmployeeLeaveComponent  },
         { path: 'manage', component: ManageleaveComponent  },
         { path: 'admin', component: AdminComponent  },

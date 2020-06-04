@@ -1,7 +1,43 @@
+.full-wid {
+    text-align: center;
+    
+}
+table {
+    width: 100%;
+    height: 100%;
+  }
+  td{
+    //   font-size: 1.5vmax
+    font-size: x-small
+  }
+  th{
+    // font-size: 1.5vmax
+    font-size: x-small
+}
+ion-button{
+    width:  100%;
+}
+.example-full-width{
+    width:100% !important;
+  }
+mat-card-title{
+    // padding: 4rem;
+    width: 100%;
+    text-align: center; 
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    background-color: #673ab7;
+    border-color: #673ab7;
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    margin: unset;
+    top: 0;
+}
 .labelstyle{
     color: white;
-    margin:20px;
-    margin-left:0px;
+    // margin:20px;
+    // margin-left:0px;
     background-color: #673ab7;
     padding:10px; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -10,9 +46,9 @@
 }
 .search-button{
 font-size: smaller;
-padding:4px;
+// padding:4px;
 padding-top: 0px;
-margin:0px;
+// margin:0px;
 
 }
 
@@ -21,5 +57,6 @@ margin:0px;
 // }
 
 .submitbutton{
-    padding-left: 1%;
+    // padding-left: 1%;
+    text-align: center;
 }

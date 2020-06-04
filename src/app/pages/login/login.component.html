@@ -1,20 +1,30 @@
-<!-- <div class="container">
-    <div>
-        User Name : <input type="text" name="username" [(ngModel)]="username"> Password : <input type="password" name="password" [(ngModel)]="password">
-    </div>
-    <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button>
-</div> -->
+<ion-app>
 
+    <!-- <mat-card-title> تسجيل الدخول <br> &nbsp;&nbsp;&nbsp; Login </mat-card-title> -->
+    <ion-header>
+        <ion-toolbar color="primary"  >
+          
+           
+          <ion-title style="text-align:center;" >
+            نظام إدارة الإجازات   
+        <br> Leave Management System <br> </ion-title>
+         
+        
+        </ion-toolbar>
+        </ion-header>
+    <ion-content  scroll="true"   > 
+        <!-- <br><br> -->
+        <mat-card-title> تسجيل الدخول <br>
+             <!-- &nbsp;&nbsp;&nbsp; -->
+             Login </mat-card-title>
 <mat-card>
-    <mat-card-header>
-        <mat-card-title> تسجيل الدخول <br> &nbsp;&nbsp;&nbsp; Login </mat-card-title>
-    </mat-card-header>
+    <!-- <mat-card-header> -->
+       
+    <!-- </mat-card-header> -->
     <mat-card-content>
         <form  #loginForm="ngForm"   (ngSubmit)="checkLogin()" class="example-form">
             <table class="example-full-width" cellspacing="0">
-                <br>
+                <br><br><br>
                 <div dir="rtl" fxLayout="row wrap"  class="full-wid mrgn-b-md" >
                         <!-- <mat-label> Username </mat-label> -->
                         <mat-form-field class="example-full-width">
@@ -37,7 +47,8 @@
 
 
                 <mat-card-actions dir="rtl">
-                    &nbsp;&nbsp;&nbsp; <button mat-raised-button type="submit"   color="primary"> تسجيل الدخول (Login)</button>
+                    <!-- &nbsp;&nbsp;&nbsp;  -->
+                    <ion-button mat-raised-button type="submit"   color="primary"> تسجيل الدخول (Login)</ion-button>
                      <!-- &nbsp;&nbsp;&nbsp; <button mat-raised-button (click)="register()" color="primary">Register</button> -->
                  </mat-card-actions>
             </table>
@@ -46,3 +57,6 @@
     </mat-card-content>
    
 </mat-card>
+</ion-content>
+</ion-app>
+<!-- </ion-content> -->

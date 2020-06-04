@@ -1,6 +1,10 @@
+
+<ion-content  scroll="true"   > 
+  <mat-card-title >{{'register'|translate}}</mat-card-title>
+
 <mat-card class="example-card">
     <mat-card-header >
-        <mat-card-title class="title-card" >{{'register'|translate}}</mat-card-title>
+        <!-- <mat-card-title class="title-card" >{{'register'|translate}}</mat-card-title> -->
     </mat-card-header>
     <mat-card-content>
         <form  #registerForm="ngForm"   (ngSubmit)="registerEmployee(registerForm.value)" class="example-form">
@@ -48,7 +52,7 @@
                 <!-- </div>
                 <div fxLayout="row wrap"  class="full-wid mrgn-b-md"> -->
               
-                <mat-form-field> 
+                <mat-form-field  class="example-full-width"> 
                   <mat-label>{{'departmentName'|translate}}</mat-label>
                   <select matNativeControl name="Department"  [(ngModel)]="empInfo.deptName" required >
                   <!-- formControlName="selectFormControl"> -->
@@ -95,7 +99,7 @@
                   
     <mat-card-actions class="submitbutton">
         <!-- [disabled]="reportForm.invalid"  --> 
-        <button mat-raised-button type="submit"    color="primary">{{'submit'|translate}}</button>
+        <ion-button mat-raised-button type="submit"    color="primary">{{'submit'|translate}}</ion-button>
        <!-- <br><br>   -->
         <!-- <button mat-raised-button type="button" (click)="goToLoginPage()"    color="primary">Back to Login</button> -->
     </mat-card-actions>
@@ -106,6 +110,7 @@
 <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
 </mat-card-content>
 </mat-card>
+</ion-content>
 
 
 <!-- 
