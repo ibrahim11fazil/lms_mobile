@@ -28,27 +28,27 @@ export class HttpClientService {
   private empInfo:string;
   private leaveByYear:string;
   constructor(private httpClient: HttpClient) {
-    this.employeeLeaveURl = "http://127.0.0.1:8080/employeeLeaveRequest";
-    this.employeeLeaveList = "http://127.0.0.1:8080/employeeLeaveRequestList";
-    this.upload = "http://127.0.0.1:8080/upload";
+    this.employeeLeaveURl = "http://192.168.100.6:8080/employeeLeaveRequest";
+    this.employeeLeaveList = "http://192.168.100.6:8080/employeeLeaveRequestList";
+    this.upload = "http://192.168.100.6:8080/upload";
     this.token = sessionStorage.getItem('token');
-    this.empInfo='http://127.0.0.1:8080/employeeDetails/';
-    this.leaveByYear='http://127.0.0.1:8080/getLeaveByYear';
+    this.empInfo='http://192.168.100.6:8080/employeeDetails/';
+    this.leaveByYear='http://192.168.100.6:8080/getLeaveByYear';
   }
 
   getEmployees() {
-    return this.httpClient.get<EmployeeInfo[]>("http://127.0.0.1:8080/employees");
+    return this.httpClient.get<EmployeeInfo[]>("http://192.168.100.6:8080/employees");
   }
 
 
   public getEmpLeaveListById(empId:string): Observable<EmployeeLeaveInfoTable[]> {
     console.log("empInfo "+ empId)  
-    return this.httpClient.get<EmployeeLeaveInfoTable[]>("http://127.0.0.1:8080/employeeLeaveListById/"+`${empId}`);
+    return this.httpClient.get<EmployeeLeaveInfoTable[]>("http://192.168.100.6:8080/employeeLeaveListById/"+`${empId}`);
   } 
 
   // public deleteEmployee(employee) {
   //   return this.httpClient.delete<EmployeeInfo>(
-  //     "http://127.0.0.1:8080/employees" + "/" + employee.empId
+  //     "http://192.168.100.6:8080/employees" + "/" + employee.empId
   //   );
   // }
   
@@ -63,7 +63,7 @@ export class HttpClientService {
     // let header = new Headers({ 'Authorization': `${this.token}` });
      
     return this.httpClient.post<EmployeeInfoResponseType>(
-     'http://127.0.0.1:8080/register',
+     'http://192.168.100.6:8080/register',
       empDetails,header
     );
   }
@@ -73,7 +73,7 @@ export class HttpClientService {
       headers: new HttpHeaders().set('Authorization',`${this.token}`)
     }  
     return this.httpClient.get<EmployeeInfo[]>(
-     'http://127.0.0.1:8080/regEmpList'
+     'http://192.168.100.6:8080/regEmpList'
     );
   }
 
@@ -86,7 +86,7 @@ export class HttpClientService {
     headers = headers.append('Accept', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     
     return this.httpClient.get( 
-      'http://127.0.0.1:8080/generateExcelReport/'+`${year}`,
+      'http://192.168.100.6:8080/generateExcelReport/'+`${year}`,
      { headers: headers,
       observe: 'response',
       responseType: 'blob'
@@ -111,7 +111,7 @@ export class HttpClientService {
       headers: new HttpHeaders().set('Authorization',`${this.token}`)
     }  
     return this.httpClient.post<boolean>(
-      'http://127.0.0.1:8080/addEmpRole',empInfo,header
+      'http://192.168.100.6:8080/addEmpRole',empInfo,header
     );
   } 
 
@@ -132,7 +132,7 @@ export class HttpClientService {
       headers: new HttpHeaders().set('Authorization',`${this.token}`)
     }  
     return this.httpClient.post<EmployeeLeaveInfoTable[]>(
-      'http://127.0.0.1:8080/deleteEmpLeaveById',leaveInfo
+      'http://192.168.100.6:8080/deleteEmpLeaveById',leaveInfo
     );
   } 
 
@@ -211,7 +211,7 @@ export class HttpClientService {
    }
 
   //  return this.httpClient.post<HttpEvent>(
-  //   'http://127.0.0.1:8080/upload',header
+  //   'http://192.168.100.6:8080/upload',header
   // );
   //  }
 
