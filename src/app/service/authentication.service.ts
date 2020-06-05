@@ -13,7 +13,7 @@ export class AuthenticationService {
   //store JWT token in session
     authenticate(username, password) {
       return this.httpClient
-        .post<any>("http://192.168.100.6:8080/authenticate", { username, password })
+        .post<any>("http://192.168.100.6/authenticate", { username, password })
         .pipe(
           map(userData => {
             console.log(" userData roles "+  JSON.stringify(userData) +"**"+userData.empInfo.role);
